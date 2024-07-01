@@ -3,6 +3,7 @@
 const gulp = require("gulp");
 const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
+const ghPages = require("gulp-gh-pages");
 
  const dist = "./dist/";
 // const dist = "/Applications/MAMP/htdocs/test";
@@ -91,6 +92,11 @@ gulp.task("build-prod-js", () => {
                       }
                 }))
                 .pipe(gulp.dest(dist));
+});
+
+gulp.task("deploy", () => {
+  return gulp.src(dist + '/**/*')
+             .pipe(ghPages());
 });
 
 gulp.task("default", gulp.parallel("watch", "build"));
