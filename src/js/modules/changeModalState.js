@@ -10,6 +10,8 @@ const changeModalState = (state) => {
 
     checkNumInputs('#width');
     checkNumInputs('#height');
+    
+
 
     function bindActionToElems(event, elem, prop) {
         elem.forEach((item, i) => {
@@ -36,6 +38,8 @@ const changeModalState = (state) => {
                         break;
                 }
 
+                
+
                 console.log(state);
             });
         });
@@ -46,6 +50,7 @@ const changeModalState = (state) => {
     bindActionToElems('input', windowHeight, 'height');
     bindActionToElems('change', windowType, 'type');
     bindActionToElems('change', windowProfile, 'profile');
+
 };
 
 
